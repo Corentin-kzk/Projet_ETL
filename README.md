@@ -1,1 +1,1 @@
-[![Title](Image URL)](Link URL)
+[![Title](https://miro.com/welcomeonboard/QWNhWGlaTkNEMUxOTWptdENONG9NU2t6YmJZS3BQcUtIVXlzMW90MFBUV1N2UHNzOVI2WEZaZmxFR01zUEdsR3wzNDU4NzY0NTc5NDcxODgxNTQyfDI=?share_link_id=505602779620)](https://miro.com/welcomeonboard/QWNhWGlaTkNEMUxOTWptdENONG9NU2t6YmJZS3BQcUtIVXlzMW90MFBUV1N2UHNzOVI2WEZaZmxFR01zUEdsR3wzNDU4NzY0NTc5NDcxODgxNTQyfDI=?share_link_id=505602779620)
