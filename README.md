@@ -1,1 +1,1 @@
-<iframe width="768" height="432" src="https://miro.com/app/embed/uXjVNrHP-3c=/?pres=1&frameId=3458764579477660815&embedId=635875128657" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+[![Title](Image URL)](Link URL)
