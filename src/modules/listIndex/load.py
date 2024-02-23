@@ -15,7 +15,7 @@ def loadCsv(data: pd.core.frame.DataFrame):
     print(f"The '{csv_file_path}' file has been successfully created.")
     return
 
-  old_csv = pd.read_csv(csv_file_path)
+  old_csv = pd.read_csv(csv_file_path)['index']
 
   if old_csv.equals(data):
     print("No changes")
