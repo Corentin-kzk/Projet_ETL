@@ -10,6 +10,10 @@ class ListMonsters:
     self.path = path
 
   def getApi(self, headers=headers):
-    response = requests.get(self.path, headers)
-    data = response.json()
-    return data
+    try:
+      response = requests.get(self.path, headers)
+      data = response.json()
+      return data
+    except Exception as e:
+      print(f"An error has occurred ==> {e}")
+      raise
