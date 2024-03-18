@@ -35,7 +35,7 @@ The project structure is as follows:
 
 ```
 .
-├── TOTOT/
+├── data/
 │   └── TOTOT.csv           # CSV file as data source
 ├── src/
 │   └── main.py             # Python script for the ETL process
