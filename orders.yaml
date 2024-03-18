@@ -1,6 +1,6 @@
-EXTRACT:
+EXTRACT :
   monster :
-    api : 'http'
+    api : 'https://www.dnd5eapi.co/api/monsters'
 TRANSFORM:
   monster :
     filter :

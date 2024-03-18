@@ -2,6 +2,11 @@ import argparse
 from termcolor import colored
 import argcomplete
 from services.core.yaml_interpretor import YamlInterpretor
+from services.extract.extractor_handler import extract_handler
+from services.transform.transform_handler import transform_handler
+
+ETL = dict()
+
 
 def main():
     parser = argparse.ArgumentParser(description="ETL en ligne de commande en Python")
@@ -9,14 +14,19 @@ def main():
     parser.add_argument('-etl', '--etl_config', help='choose your etl module', required=False, default='index_list')
     argcomplete.autocomplete(parser)
     args = vars(parser.parse_args())
-    yaml_interpretor = YamlInterpretor(args['yaml_config'])
+    yaml_interpreter = YamlInterpretor(args['yaml_config'])
     try:
-        orders = yaml_interpretor.open()
-        extract, transform, load = yaml_interpretor.get_etl_orders(orders)
-        extract_name = yaml_interpretor.get_name(extract)
-
-        print(extract_name)
+        orders = yaml_interpreter.open()
+        extract, transform, load = yaml_interpreter.get_etl_orders(orders)
+        extract_name = yaml_interpreter.get_name(extract)
         print(f"extract : {extract}, transform : {transform}, load : {load}")
+
+        for name in extract_name:
+            print(colored(f"EXTRACT: {name} !!!", 'green'))
+            ETL[name] = extract_handler(extract[name])
+            ETL[name].display()  # Display DataStructre
+            print(colored(f"TRANSFORM: {name} !!!", 'green'))
+            transform_handler(transform[name], ETL[name])
 
     except Exception as error:
         print(colored(f"ERROR: {error}", 'red'))

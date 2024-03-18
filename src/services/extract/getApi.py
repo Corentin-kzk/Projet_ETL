@@ -6,7 +6,7 @@ url_dnd5eapi = "https://www.dnd5eapi.co/api/monsters"
 headers = {
   'Accept': 'application/json'
 }
-def getMonstersListApi(url: str):
+def getApi(url: str):
   response = requests.get(url, headers=headers)
   data = response.json()
   return data
