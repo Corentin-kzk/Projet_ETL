@@ -14,6 +14,7 @@ def main():
         orders = yaml_interpretor.open()
         extract, transform, load = yaml_interpretor.get_etl_orders(orders)
         extract_name = yaml_interpretor.get_name(extract)
+
         print(extract_name)
         print(f"extract : {extract}, transform : {transform}, load : {load}")
 
