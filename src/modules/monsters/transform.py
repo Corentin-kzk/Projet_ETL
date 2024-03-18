@@ -46,7 +46,7 @@ import os
 
 current_dir = os.path.dirname(__file__)
 monsters_file_path = os.path.abspath(os.path.join(current_dir, '..', '..', 'data', 'monsters_mock.json'))
-print(monsters_file_path)
+
 monsters_file = open(monsters_file_path, 'r')
 
 monsterList = json.load(monsters_file)
