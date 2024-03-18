@@ -41,146 +41,19 @@ class Transform:
         return filtered_monsters
 
     
-monster = {
-  "index": "aboleth",
-  "name": "Aboleth",
-  "size": "Large",
-  "type": "aberration",
-  "alignment": "lawful evil",
-  "armor_class": [
-    {
-      "type": "natural",
-      "value": 17
-    }
-  ],
-  "hit_points": 135,
-  "hit_dice": "18d10",
-  "hit_points_roll": "18d10+36",
-  "speed": {
-    "walk": "10 ft.",
-    "swim": "40 ft."
-  },
-  "strength": 21,
-  "dexterity": 9,
-  "constitution": 15,
-  "intelligence": 18,
-  "wisdom": 15,
-  "charisma": 18,
-  "proficiencies": [
-    {
-      "value": 6,
-      "proficiency": {
-        "index": "saving-throw-con",
-        "name": "Saving Throw: CON",
-        "url": "/api/proficiencies/saving-throw-con"
-      }
-    },
-    {
-      "value": 8,
-      "proficiency": {
-        "index": "saving-throw-int",
-        "name": "Saving Throw: INT",
-        "url": "/api/proficiencies/saving-throw-int"
-      }
-    }
-  ],
-  "damage_vulnerabilities": [],
-  "damage_resistances": [],
-  "damage_immunities": [],
-  "condition_immunities": [],
-  "senses": {
-    "darkvision": "120 ft.",
-    "passive_perception": 20
-  },
-  "languages": "Deep Speech, telepathy 120 ft.",
-  "challenge_rating": 10,
-  "proficiency_bonus": 4,
-  "xp": 5900,
-  "special_abilities": [
-    {
-      "name": "Amphibious",
-      "desc": "The aboleth can breathe air and water."
-    },
-    {
-      "name": "Mucous Cloud",
-      "desc": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 ft. of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater.",
-      "dc": {
-        "dc_type": {
-          "index": "con",
-          "name": "CON",
-          "url": "/api/ability-scores/con"
-        },
-        "dc_value": 14,
-        "success_type": "none"
-      }
-    },
-    {
-      "name": "Probing Telepathy",
-      "desc": "If a creature communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature."
-    }
-  ],
-  "actions": [
-    {
-      "name": "Multiattack",
-      "multiattack_type": "actions",
-      "desc": "The aboleth makes three tentacle attacks.",
-      "actions": [
-        {
-          "action_name": "Tentacle",
-          "count": 3,
-          "type": "melee"
-        },
-        {
-          "action_name": "Tentacle",
-          "count": 4,
-          "type": "melee"
-        }
-      ]
-    },
-    {
-      "multiattack_type": "actions",
-      "desc": "The aboleth makes three tentacle attacks.",
-      "actions": [
-        {
-          "action_name": "Test",
-          "count": 3,
-          "type": "melee"
-        }
-      ]
-    }
-  ],
-  "legendary_actions": [
-    {
-      "name": "Detect",
-      "desc": "The aboleth makes a Wisdom (Perception) check."
-    },
-    {
-      "name": "Tail Swipe",
-      "desc": "The aboleth makes one tail attack."
-    },
-    {
-      "name": "Psychic Drain (Costs 2 Actions)",
-      "desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.",
-      "attack_bonus": 0,
-      "damage": [
-        {
-          "damage_type": {
-            "index": "psychic",
-            "name": "Psychic",
-            "url": "/api/damage-types/psychic"
-          },
-          "damage_dice": "3d6"
-        }
-      ]
-    }
-  ],
-  "image": "/api/images/monsters/aboleth.png",
-  "url": "/api/monsters/aboleth"
-}
+import json
+import os
 
+current_dir = os.path.dirname(__file__)
+monsters_file_path = os.path.abspath(os.path.join(current_dir, '..', '..', 'data', 'monsters_mock.json'))
+print(monsters_file_path)
+monsters_file = open(monsters_file_path, 'r')
 
-monsterList = [monster] 
+monsterList = json.load(monsters_file)
 transformer = Transform(monsterList)
-keys_needed = ["index", "name", "size", "actions.actions", "actions.name", "special_abilities.name"] 
+keys_needed = ["index", "name", "size", "actions.actions", "actions.name", "special_abilities.dc.dc_type.name"] 
 filtered_monsters = transformer.filter(keys_needed)
 print(filtered_monsters)
+
+
+monsters_file.close()
