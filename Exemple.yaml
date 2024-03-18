@@ -1,0 +1,5 @@
+EXTRACT:
+  - API:
+      URL: 'API URL'
+      KEYS:
+        - 'KEYS TO EXTRACT'

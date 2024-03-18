@@ -1,0 +1,14 @@
+EXTRACT:
+  monster :
+    api : 'http'
+TRANSFORM:
+  monster :
+    filter :
+      - keys :
+          - 'index'
+          - 'name'
+          - 'spell'
+LOAD:
+  json : 'monsters'
+
+
