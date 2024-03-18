@@ -36,7 +36,7 @@ The project structure is as follows:
 ```
 .
 ├── data/
-│   └── TOTOT.csv           # CSV file as data source
+│   └── data.csv           # CSV file as data source
 ├── src/
 │   └── main.py             # Python script for the ETL process
 ├── pyproject.toml          # PDM configuration file
