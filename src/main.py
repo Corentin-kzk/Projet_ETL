@@ -24,7 +24,8 @@ def main():
         for name in extract_name:
             print(colored(f"EXTRACT: {name} !!!", 'green'))
             ETL[name] = extract_handler(extract[name])
-            ETL[name].display()  # Display DataStructre
+            for df in ETL[name]:
+                df.display()  # Display DataStructre
             print(colored(f"TRANSFORM: {name} !!!", 'green'))
             transform_handler(transform[name], ETL[name])
 
