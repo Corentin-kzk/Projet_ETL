@@ -1,5 +1,16 @@
-EXTRACT:
-  - API:
-      URL: 'API URL'
-      KEYS:
-        - 'KEYS TO EXTRACT'
+EXTRACT :
+  #tag :
+    #json :
+    #csv :
+    #api:
+TRANSFORM:
+  #tag :
+    #filter :
+     # - keys :
+         # - 'index'
+         # - 'name'
+         # - 'spell'
+LOAD:
+  json : 'monsters'
+
+

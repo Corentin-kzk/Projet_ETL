@@ -66,7 +66,7 @@ destination:
 Then, you can execute the `etl_script.py` script with this YAML file using PDM:
 
 ```bash
-pdm run python etl_script.py -y instructions.yml
+pdm run src/main.py -y instructions.yml
 ```
 
 Make sure your environment is properly configured and all dependencies are installed.

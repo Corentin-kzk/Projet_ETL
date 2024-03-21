@@ -1,6 +1,6 @@
-EXTRACT:
+EXTRACT :
   monster :
-    api : 'http'
+    json : '/Users/corentinkozka/Documents/Perso/Ecole_EEM/data-engineer-em-01/TP/Projet_ETL/src/data/monsters_mock.json'
 TRANSFORM:
   monster :
     filter :
