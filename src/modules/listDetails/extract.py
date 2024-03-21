@@ -16,7 +16,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-def getMonsters(headers=headers):
+def get_monsters(headers=headers):
 
   if not os.path.exists(folder_path) or not os.path.exists(csv_file_path):
     print("You need to extract index before.")

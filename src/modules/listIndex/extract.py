@@ -1,19 +1,20 @@
+import os
 import requests
+from dotenv import load_dotenv
 
-class ListMonsters:
+load_dotenv()
+BASE_URL = os.getenv("BASE_DND_URL")
+API_URL = BASE_URL + os.getenv("URL_DND_MONSTER_INDEX")
 
-  headers = {
-    'Accept': 'application/json'
-  }
+headers = {
+  'Accept': 'application/json'
+}
 
-  def __init__(self, path):
-    self.path = path
-
-  def getApi(self, headers=headers):
-    try:
-      response = requests.get(self.path, headers)
-      data = response.json()
-      return data
-    except Exception as e:
-      print(f"An error has occurred ==> {e}")
-      raise
+def get_api(headers=headers):
+  try:
+    response = requests.get(API_URL, headers)
+    data = response.json()
+    return data
+  except Exception as e:
+    print(f"An error has occurred ==> {e}")
+    raise
