@@ -1,7 +1,7 @@
 import os
 import json
 
-def transformData (dataList: list):
+def transform_data (dataList: list):
   try:
     data = json.dumps(dataList)
     return data

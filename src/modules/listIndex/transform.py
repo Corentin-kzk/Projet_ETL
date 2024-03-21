@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-def keepIndex(data: dict):
+def keep_index(data: dict):
   try:
     df = pd.DataFrame(data['results'])
     return df['index']

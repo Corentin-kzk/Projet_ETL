@@ -1,7 +1,9 @@
 import os
 import pandas as pd
+from extract import get_api
+from transform import keep_index
 
-def loadCsv(data: pd.core.frame.DataFrame):
+def load_csv(data: pd.core.frame.DataFrame):
   folder_path = 'src/data'
   file_name = 'listIndex.csv'
   csv_file_path = os.path.join(folder_path, file_name)
@@ -22,3 +24,5 @@ def loadCsv(data: pd.core.frame.DataFrame):
   else:
     data.to_csv(csv_file_path, index=False)
     print(f"The '{csv_file_path}' file has been successfully updated.")
+
+load_csv(keep_index(get_api()))

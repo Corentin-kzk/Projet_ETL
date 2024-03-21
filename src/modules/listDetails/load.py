@@ -1,8 +1,9 @@
 import os
 import json
-from extract import getMonsters
-from transform import transformData
-def loadJson(data: json):
+from extract import get_monsters
+from transform import transform_data
+
+def load_json(data: json):
   folder_path = 'src/data'
   file_name = 'monsters.json'
   json_file_path = os.path.join(folder_path, file_name)
@@ -15,4 +16,4 @@ def loadJson(data: json):
 
   print(f"The '{json_file_path}' file has been successfully created.")
 
-loadJson(transformData(getMonsters()))
+load_json(transform_data(get_monsters()))
