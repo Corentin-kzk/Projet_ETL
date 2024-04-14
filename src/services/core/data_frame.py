@@ -12,6 +12,12 @@ class DataFrame:
     def display(self):
         print(self.df)
 
+    def extract(self, keys):
+        self.df = self.df[keys]
+
+    def filter(self, ascending):
+        self.df = self.df.sort_index(axis=1, ascending=ascending)
+
     def add_row(self, new_row):
         self.df = self.df.append(new_row, ignore_index=True)
 

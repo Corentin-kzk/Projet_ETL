@@ -20,7 +20,6 @@ def main():
         orders = yaml_interpreter.open()
         extract, transform, load = yaml_interpreter.get_etl_orders(orders)
         extract_name = yaml_interpreter.get_name(extract)
-        print(f"extract : {extract}, transform : {transform}, load : {load}")
 
         for name in extract_name:
             print(colored(f"EXTRACT: {name} !!!", 'green'))

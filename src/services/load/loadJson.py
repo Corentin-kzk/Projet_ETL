@@ -1,6 +1,7 @@
-from termcolor import colored
+from ..core.data_frame import DataFrame
 
-def load_json(fileName,df):
+
+def load_json(fileName,df: DataFrame):
     print(df.display())
     try:
         df.to_json(f"./{fileName}.json")
