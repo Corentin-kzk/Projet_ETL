@@ -19,47 +19,30 @@ class Transform:
                 value = self._recursive_search(item, keys[1:])
                 result.append(value)
 
-            return result
+            return result if len(result) > 1 else value
 
-        return {keys[1:][0]: self._recursive_search(nested_dict.get(keys[0]), keys[1:])}
+        return self._recursive_search(nested_dict.get(keys[0]), keys[1:])
 
-    def format(self, keys_needed):
+    def filter(self, keys_needed):
         filtered_monsters = []
 
         for monster in self.monsterList:
             filtered_monster = {}
             for key in keys_needed:
                 nested_keys = key.split('.')
-                if nested_keys[0] not in filtered_monster:
-                    filtered_monster[nested_keys[0]] = {}
+                if key not in filtered_monster:
+                    filtered_monster[key] = {}
                 if len(nested_keys) > 1:
-                    if nested_keys[1] not in filtered_monster[nested_keys[0]]:
-                        filtered_monster[nested_keys[0]][nested_keys[1]] = self._recursive_search(monster, nested_keys)
+                    if nested_keys[1] not in filtered_monster[key]:
+                        filtered_monster[key] = self._recursive_search(monster, nested_keys)
                 else:
-                    filtered_monster[nested_keys[0]] = self._recursive_search(monster, nested_keys)
+                    filtered_monster[key] = self._recursive_search(monster, nested_keys)
             filtered_monsters.append(filtered_monster)
 
         return filtered_monsters
     
-    def filter_v2(self, keys_needed):
-        metas = []
-        records = []
-        for val in keys_needed:
-            splitted_val = val.split('.')
-            if len(splitted_val) > 1: 
-                records.append(splitted_val)
-            else:
-                metas.append(val)
-        
-        df_list = []
-    
-        print(self.format(keys_needed))
-        if len(records) > 0:
-            for record in records:
-                df_list.append(pd.json_normalize([{'index': 'aboleth', 'name': 'Aboleth', 'size': 'Large', 'armor_class.type': 'natural', 'armor_class.value': 17}], record_prefix=".".join(record[:-1]) + ".", meta=metas, errors='ignore'))
-        else:
-            df_list.append(pd.json_normalize(self.format(keys_needed), meta=keys_needed, errors='ignore'))
-        return pd.concat(df_list, ignore_index=True)
+    def json_to_dataframe(self, keys_needed):
+        return pd.json_normalize(self.filter(keys_needed), errors='ignore')
 
     
 import json
@@ -72,9 +55,7 @@ monsters_file = open(monsters_file_path, 'r')
 
 monsterList = json.load(monsters_file)
 transformer = Transform(monsterList)
-keys_needed = ["index", "name", "size", 'armor_class.type'] 
+keys_needed = ["index", "name", "size", 'armor_class.type', 'actions.name', 'actions.actions.action_name', 'actions.actions.count'] 
 
-
-
-print(transformer.filter_v2(keys_needed))
+print(transformer.json_to_dataframe(keys_needed))
 monsters_file.close()
