@@ -1,3 +1,4 @@
+import pandas as pd
 class Transform:
     def __init__(self, monsterList=[]):
         self.monsterList = monsterList
@@ -22,7 +23,7 @@ class Transform:
 
         return {keys[1:][0]: self._recursive_search(nested_dict.get(keys[0]), keys[1:])}
 
-    def filter(self, keys_needed):
+    def format(self, keys_needed):
         filtered_monsters = []
 
         for monster in self.monsterList:
@@ -39,6 +40,26 @@ class Transform:
             filtered_monsters.append(filtered_monster)
 
         return filtered_monsters
+    
+    def filter_v2(self, keys_needed):
+        metas = []
+        records = []
+        for val in keys_needed:
+            splitted_val = val.split('.')
+            if len(splitted_val) > 1: 
+                records.append(splitted_val)
+            else:
+                metas.append(val)
+        
+        df_list = []
+    
+        print(self.format(keys_needed))
+        if len(records) > 0:
+            for record in records:
+                df_list.append(pd.json_normalize([{'index': 'aboleth', 'name': 'Aboleth', 'size': 'Large', 'armor_class.type': 'natural', 'armor_class.value': 17}], record_prefix=".".join(record[:-1]) + ".", meta=metas, errors='ignore'))
+        else:
+            df_list.append(pd.json_normalize(self.format(keys_needed), meta=keys_needed, errors='ignore'))
+        return pd.concat(df_list, ignore_index=True)
 
     
 import json
@@ -51,9 +72,9 @@ monsters_file = open(monsters_file_path, 'r')
 
 monsterList = json.load(monsters_file)
 transformer = Transform(monsterList)
-keys_needed = ["index", "name", "size", "actions.actions", "actions.name", "special_abilities.dc.dc_type.name"] 
-filtered_monsters = transformer.filter(keys_needed)
-print(filtered_monsters)
+keys_needed = ["index", "name", "size", 'armor_class.type'] 
 
 
+
+print(transformer.filter_v2(keys_needed))
 monsters_file.close()
