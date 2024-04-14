@@ -121,6 +121,27 @@ class Transform:
 
         return df_to_filter
     
+    def apply_type_filters(self, filter_list: list, df: DataFrame = None)-> DataFrame:
+        df_to_filter = None
+        if df is not None:
+            df_to_filter = df
+        else:
+            df_to_filter = self.df
+
+        for fltr in filter_list:
+            if not isinstance(fltr[0], list):
+                df_to_filter = self.filter_dataframe_by_type(fltr[0], fltr[1], df_to_filter)
+            else:
+                df_list = []
+                for sub_fltr in fltr:
+                    df_list.append(self.filter_dataframe_by_type(sub_fltr[0], sub_fltr[1], df_to_filter))
+                df_to_filter = concat(df_list)
+
+        if not isinstance(df, DataFrame):
+            self.df = df_to_filter
+
+        return df_to_filter
+    
 import json
 import os
 
@@ -136,7 +157,14 @@ transformer = Transform(monsterList)
 keys_needed = ["index", "name", "size", 'speed.walk', 'armor_class.type', 'armor_class.value', 'actions.name', 'actions.actions.count'] 
 
 my_df = transformer.json_to_dataframe(keys_needed)
-filtered_df = transformer.filter_dataframe_by_type("actions.name", 'list')
+
+type_filters = [
+    [
+        "actions.name", 'list'
+    ]
+]
+
+transformer.apply_type_filters(type_filters)
 
 filters = [
     [
