@@ -9,6 +9,7 @@ TRANSFORM:
           - 'name'
           - 'spell'
 LOAD:
-  json : 'monsters'
+   monster :
+    csv : 'monsters'
 
 

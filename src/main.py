@@ -4,6 +4,7 @@ import argcomplete
 from services.core.yaml_interpretor import YamlInterpretor
 from services.extract.extractor_handler import extract_handler
 from services.transform.transform_handler import transform_handler
+from services.load.load_handler import load_handler
 
 ETL = dict()
 
@@ -24,10 +25,11 @@ def main():
         for name in extract_name:
             print(colored(f"EXTRACT: {name} !!!", 'green'))
             ETL[name] = extract_handler(extract[name])
-            for df in ETL[name]:
-                df.display()  # Display DataStructre
             print(colored(f"TRANSFORM: {name} !!!", 'green'))
             transform_handler(transform[name], ETL[name])
+            print(colored(f"LOAD: {name} !!!", 'green'))
+            load_handler(load[name], ETL[name])
+
 
     except Exception as error:
         print(colored(f"ERROR: {error}", 'red'))

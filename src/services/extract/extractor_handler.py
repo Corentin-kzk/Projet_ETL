@@ -12,14 +12,14 @@ def order_handler(order_name, directive):
             return get_csv(directive)
         case 'json':
             return get_json(directive)
-    raise ValueError(f'Unknown open type: {order_name}')
+    raise ValueError(f'Unknown EXTRACT type: {order_name}')
 
 
 def extract_handler(orders):
-    df = list()
+    df = None
     for order_id, order_data in orders.items():
         result = order_handler(order_id, order_data)
-        df.append(DataFrame(result))
-    if len(df) == 0:
+        df = DataFrame(result)
+    if df is None:
         raise Exception('No data found')
     return df

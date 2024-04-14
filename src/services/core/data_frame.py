@@ -5,6 +5,10 @@ class DataFrame:
     def __init__(self, data=None):
         self.df = pd.DataFrame(data)
 
+    def to_json(self, filename=None):
+        return self.df.to_json(filename,orient='records', indent=4)
+    def to_csv(self, filename=None):
+        return self.df.to_csv(filename)
     def display(self):
         print(self.df)
 
