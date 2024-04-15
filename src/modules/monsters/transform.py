@@ -146,7 +146,7 @@ import json
 import os
 
 current_dir = os.path.dirname(__file__)
-monsters_file_path = os.path.abspath(os.path.join(current_dir, '..', '..', 'data', 'monsters.json'))
+monsters_file_path = os.path.abspath(os.path.join(current_dir, '..', '..', 'data', 'monsters_mock.json'))
 
 monsters_file = open(monsters_file_path, 'r')
 
@@ -172,7 +172,7 @@ filters = [
         ["armor_class.value", "equal_or_bigger", 18]
     ],
     [
-        "size", "equal", "Large"
+        "size", "equal", "Small"
     ],
     [
         "speed.walk", "equal", "40 ft."

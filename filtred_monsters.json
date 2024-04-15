@@ -1,0 +1,295 @@
+[
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Draft Horse",
+        "index":"draft-horse",
+        "armor_class.value":10,
+        "armor_class.type":"dex",
+        "actions.name":"Hooves",
+        "actions.actions.action_name":null
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Bone Devil",
+        "index":"bone-devil",
+        "armor_class.value":19,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Claw",
+            "Sting"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Claw",
+                "Sting"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Gorgon",
+        "index":"gorgon",
+        "armor_class.value":19,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Gore",
+            "Hooves",
+            "Petrifying Breath"
+        ],
+        "actions.actions.action_name":[
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Guardian Naga",
+        "index":"guardian-naga",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Bite",
+            "Spit Poison"
+        ],
+        "actions.actions.action_name":[
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Ice Devil",
+        "index":"ice-devil",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claws",
+            "Tail",
+            "Wall of Ice"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claws",
+                "Tail"
+            ],
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Marilith",
+        "index":"marilith",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Longsword",
+            "Tail",
+            "Teleport"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Longsword",
+                "Tail"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Planetar",
+        "index":"planetar",
+        "armor_class.value":19,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Greatsword",
+            "Healing Touch"
+        ],
+        "actions.actions.action_name":[
+            "Greatsword",
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Young Black Dragon",
+        "index":"young-black-dragon",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claw",
+            "Acid Breath"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claw"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Young Blue Dragon",
+        "index":"young-blue-dragon",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claw",
+            "Lightning Breath"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claw"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Young Bronze Dragon",
+        "index":"young-bronze-dragon",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claw",
+            "Breath Weapons"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claw"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Young Gold Dragon",
+        "index":"young-gold-dragon",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claw",
+            "Breath Weapons"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claw"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Young Green Dragon",
+        "index":"young-green-dragon",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claw",
+            "Poison Breath"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claw"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Young Red Dragon",
+        "index":"young-red-dragon",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claw",
+            "Fire Breath"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claw"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "speed.walk":"40 ft.",
+        "size":"Large",
+        "name":"Young Silver Dragon",
+        "index":"young-silver-dragon",
+        "armor_class.value":18,
+        "armor_class.type":"natural",
+        "actions.name":[
+            "Multiattack",
+            "Bite",
+            "Claw",
+            "Breath Weapons"
+        ],
+        "actions.actions.action_name":[
+            [
+                "Bite",
+                "Claw"
+            ],
+            null,
+            null,
+            null
+        ]
+    }
+]
