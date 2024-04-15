@@ -75,7 +75,7 @@ Make sure your environment is properly configured and all dependencies are insta
 
 - [Corentin KOZKA](https://github.com/Corentin-kzk) - Developer
 - [Frederick Vu](https://github.com/Corentin-kzk) - Developer
-- [Youva IBRAHIM](https://github.com/Corentin-kzk) - Developer
+- [Youva IBRAHIM](https://github.com/YouvaIBRAHIM) - Developer
 
 ## License
 

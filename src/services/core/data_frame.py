@@ -2,6 +2,8 @@ import pandas as pd
 
 
 class DataFrame:
+    df: pd.DataFrame = None
+
     def __init__(self, data=None):
         self.df = pd.DataFrame(data)
 
@@ -23,3 +25,9 @@ class DataFrame:
 
     def delete_row(self, index):
         self.df = self.df.drop(index)
+    
+    def get(self) -> pd.DataFrame:
+        return self.df
+    
+    def set(self, new_value):
+        self.df = new_value

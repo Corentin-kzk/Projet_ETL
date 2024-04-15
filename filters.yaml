@@ -1,0 +1,35 @@
+EXTRACT :
+  monster :
+    json : './src/data/monsters.json'
+TRANSFORM:
+  monster :
+    - keys_needed:
+        - "index"
+        - "name"
+        - "size"
+        - 'speed.walk'
+        - 'armor_class.type'
+        - 'armor_class.value'
+        - 'actions.name'
+        - 'actions.actions.action_name'
+    - filter_by :
+        - - 'size'
+          - 'equal'
+          - 'Large'
+        - - 'speed.walk'
+          - 'equal'
+          - '40 ft.'
+        - - - "armor_class.value"
+            - "equal_or_lower"
+            - 10
+          - - "armor_class.value"
+            - "equal_or_bigger"
+            - 18
+    
+    - order : 'ASC'
+LOAD:
+   monster :
+    json : 'filtred_monsters'
+    csv : 'filtred_monsters'
+
+
