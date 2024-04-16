@@ -67,22 +67,8 @@ La structure du projet est la suivante :
 
 Pour exécuter le processus ETL, vous pouvez spécifier des instructions en utilisant un fichier YAML avec le drapeau `-y`. Voici un exemple de fichier YAML :
 
-```yaml
-# Instructions ETL
-source:
-  type: csv
-  path: data/input.csv
-transformations:
-  - name: clean_data
-    type: cleaning
-  - name: enrich_data
-    type: enrichment
-destination:
-  type: database
-  connection_string: "votre_chaîne_de_connexion_à_la_base_de_données"
-```
 
-Ensuite, vous pouvez exécuter le script `etl_script.py` avec ce fichier YAML.
+Ensuite, vous pouvez exécuter le script `main.py` avec ce fichier YAML.
 
 ```bash
 pdm run src/main.py -y instructions.yml
