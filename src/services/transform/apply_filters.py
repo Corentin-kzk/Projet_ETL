@@ -13,7 +13,6 @@ def apply_filters(data, directives) -> pd.DataFrame:
                 df_list.append(filter_dataframe(df_to_filter, sub_fltr[0], sub_fltr[1], sub_fltr[2]))
             df_to_filter = pd.concat(df_list)
 
-    print(df_to_filter)
     data.set(df_to_filter) 
 
 

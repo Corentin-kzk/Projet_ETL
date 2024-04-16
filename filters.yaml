@@ -22,7 +22,7 @@ TRANSFORM:
     - filter_by :
         - - 'size'
           - 'equal'
-          - 'Large'
+          - 'Medium'
         - - 'speed.walk'
           - 'equal'
           - '40 ft.'
