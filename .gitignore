@@ -25,6 +25,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+orders.yaml
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -108,6 +110,7 @@ ipython_config.py
 #   in version control.
 #   https://pdm.fming.dev/#use-with-ide
 .pdm.toml
+.pdm-python
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
@@ -120,14 +123,17 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+path/
 .env
-.venv
+.venv/*
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
 .idea
+.DS_Store
+.vscode
 
 # Spyder project settings
 .spyderproject
